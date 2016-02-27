@@ -1,9 +1,9 @@
 # cardShuffleAlgorithm-  miles.hochstein 
 
-This javascript randomly shuffles a deck of cards of arbitary size, from n = 3 to some large value.
+This javascript randomly shuffles a deck of cards of arbitary size.
 
-Balances two constraints. (1) Sort array size (larger means fewer collisions) and (2) collision correction (which has some computational cost).
+It balances two constraints. (1) Sort array size (larger means fewer collisions) and (2) collision correction (which has some computational cost).
 
-You could test empirically to find sweet spot for sort array size.
+You could test empirically to find sweet spot for sort array size.  The correct spot would balance allocation of memory with iteration cycles.  
 
-No guarantee that your random sort will not be identical to the original array, but this becomes very improbable with a 52 card deck.   For smaller arrays this would need to be checked.
+No guarantee that your random sort will not be identical to the original array, but this becomes very improbable with a 52 card deck.   For very small arrays this would need to be checked and happens often.
