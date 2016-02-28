@@ -24,12 +24,15 @@ console.time("dbsave");
 
 //parameters
 var iterationCount=0;  //Useful to measure efficiency of alogrithm 
-var sortSpace =5;//Try setting multiplier of sortArraySize.length to maximize efficiency
+var sortSpace = 10;
+//Try setting multiplier of sortArraySize.length to maximize efficiency and speed
+
 var sortArray = [];
 var sortArraySize = cards.length * sortSpace;
 
 
-var shuffle = function(cards, sortArray){
+// var shuffle = function(cards, sortArray, sortArraySize){
+
 	for ( var ii = 0;  ii<cards.length; ii++ ){
 		//create random index value for much bigger array
 		var randomIndex = Math.floor(Math.random() * sortArraySize);
@@ -49,11 +52,12 @@ var shuffle = function(cards, sortArray){
 	//filter undefined values
 	sortArray = sortArray.filter(function(n){ return n != undefined });
 
-	return sortArray;
-}
+	//return sortArray;
+
+// }
 
 
-shuffle(cards, sortArray);
+ // shuffle(cards, sortArray, sortArraySize);
 
  
 //result
