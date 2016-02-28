@@ -1,0 +1,5 @@
+
+
+var i = dog;
+
+console.log(i);
