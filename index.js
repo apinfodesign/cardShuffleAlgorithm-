@@ -1,3 +1,4 @@
+// commented vesion
 // A fast way to randomly shuffle array elements, 
 // representing a deck of cards of arbitrary size
  "use strict";
