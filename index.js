@@ -25,7 +25,7 @@ console.time("dbsave");
 //parameters
 var iterationCount = 0;  //Useful to measure efficiency of alogrithm 
 var sortSpace = 10;
-//Try setting multiplier of sortArraySize.length to maximize efficiency and speed
+//Try setting sortSpace multiplier of sortArraySize.length to maximize efficiency and speed
 
 var shuffle = function(iterationCount, cards, sortSpace){
 	var sortArray = [];
@@ -60,7 +60,6 @@ var iterations = results[1];
 		console.log("original: ", cards[ii], ' shuffled: ', completeArray[ii])
 	}
 
-console.log("iterationCount was: ", iterations);
-console.log("For shuffling card deck of length: ", completeArray.length);
-console.log( sortSpace, ' is sort array size. ' );
+console.log(" ",  iterations, "iterations required to sort card deck of length: ", completeArray.length);
+console.log("Sort array size was", sortSpace , " times deck size.");
 console.timeEnd("dbsave");
