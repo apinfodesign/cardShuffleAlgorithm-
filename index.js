@@ -60,6 +60,6 @@ var iterations = results[1];
 		console.log("original: ", cards[ii], ' shuffled: ', completeArray[ii])
 	}
 
-console.log(" ",  iterations, "iterations required to sort card deck of length: ", completeArray.length);
+console.log(" ",  iterations, "iterations required to sort deck of : ", completeArray.length);
 console.log("Sort array size was", sortSpace , " times deck size.");
 console.timeEnd("dbsave");
