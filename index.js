@@ -23,16 +23,13 @@ var cards = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,
 console.time("dbsave");
 
 //parameters
-var iterationCount=0;  //Useful to measure efficiency of alogrithm 
+var iterationCount = 0;  //Useful to measure efficiency of alogrithm 
 var sortSpace = 10;
 //Try setting multiplier of sortArraySize.length to maximize efficiency and speed
 
-var sortArray = [];
-var sortArraySize = cards.length * sortSpace;
-
-
-// var shuffle = function(cards, sortArray, sortArraySize){
-
+var shuffle = function(iterationCount, cards, sortSpace){
+	var sortArray = [];
+	var sortArraySize = cards.length * sortSpace;
 	for ( var ii = 0;  ii<cards.length; ii++ ){
 		//create random index value for much bigger array
 		var randomIndex = Math.floor(Math.random() * sortArraySize);
@@ -51,24 +48,19 @@ var sortArraySize = cards.length * sortSpace;
 	}
 	//filter undefined values
 	sortArray = sortArray.filter(function(n){ return n != undefined });
+	return [sortArray, iterationCount];
+}
 
-	//return sortArray;
+var results = shuffle(iterationCount, cards, sortSpace);
+var completeArray = results[0];
+var iterations = results[1];
 
-// }
-
-
- // shuffle(cards, sortArray, sortArraySize);
-
- 
 //result
-//console.log (sortArray);
 	for ( var ii = 0;  ii<cards.length; ii++ ){
-		console.log("original: ", cards[ii], ' shuffled: ', sortArray[ii])
+		console.log("original: ", cards[ii], ' shuffled: ', completeArray[ii])
 	}
 
-console.log("of length: ", sortArray.length);
-console.log("iterationCount was: ", iterationCount);
-
-console.log(sortSpace, " is sort array size.");
+console.log("iterationCount was: ", iterations);
+console.log("For shuffling card deck of length: ", completeArray.length);
+console.log( sortSpace, ' is sort array size. ' );
 console.timeEnd("dbsave");
-
