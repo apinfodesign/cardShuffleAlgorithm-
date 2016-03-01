@@ -27,13 +27,13 @@ var cards = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,
 console.time("dbsave"); //start timing
 
 //parameters
-var iterationCount = 0;  //Useful to measure efficiency of alogrithm 
 //*************************
 var sortSpace = 4;   //Affects memory required for sort
 //*************************
 //Try setting sortSpace multiplier of sortArraySize.length to maximize efficiency and speed
 
-var shuffle = function(iterationCount, cards, sortSpace){
+var shuffle = function(cards, sortSpace){
+	var iterationCount = 0;  //Useful to measure efficiency of alogrithm 
 	var sortArray = [];
 	var sortArraySize = cards.length * sortSpace;
 	for ( var ii = 0;  ii<cards.length; ii++ ){
@@ -58,7 +58,7 @@ var shuffle = function(iterationCount, cards, sortSpace){
 	return [sortArray, iterationCount];
 }
 
-var results = shuffle(iterationCount, cards, sortSpace);
+var results = shuffle( cards, sortSpace);
 var completeArray = results[0];
 var iterations = results[1];
 
